@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "yeeeee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<MarioKart7Builder.Models.Kart>
+
+<h2>Kart(s)</h2>
+<table>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.id)</th>
+        <th>@Html.DisplayNameFor(model => model.name)</th>
+        <th>@Html.DisplayNameFor(model => model.userId)</th>
+        <th>@Html.DisplayNameFor(model => model.characterId)</th>
+        <th>@Html.DisplayNameFor(model => model.bodyId)</th>
+        <th>@Html.DisplayNameFor(model => model.tireId)</th>
+        <th>@Html.DisplayNameFor(model => model.gliderId)</th>
+    </tr>
+    @foreach (var listKart in Model)
+    {
+        <tr>
+            <th>@Html.DisplayFor(modelKart => listKart.id)</th>
+            <th>@Html.DisplayFor(modelKart => listKart.name)</th>
+            <th>@Html.DisplayFor(modelKart => listKart.userId)</th>
+            <th>@Html.DisplayFor(modelKart => listKart.characterId)</th>
+            <th>@Html.DisplayFor(modelKart => listKart.bodyId)</th>
+            <th>@Html.DisplayFor(modelKart => listKart.tireId)</th>
+            <th>@Html.DisplayFor(modelKart => listKart.gliderId)</th>
+        </tr>
+    }
+</table>
