@@ -6,10 +6,13 @@
 @model IEnumerable<MarioKart7Builder.Models.Kart>
 
 <h2>Kart(s)</h2>
+@Html.ActionLink("Home", "index", "Home") | @Html.ActionLink("Create New", "Create")
+<hr>
+
 <table>
     <tr>
-        <th>@Html.DisplayNameFor(model => model.id)</th>
         <th>@Html.DisplayNameFor(model => model.name)</th>
+        <th>@Html.DisplayNameFor(model => model.id)</th>
         <th>@Html.DisplayNameFor(model => model.userId)</th>
         <th>@Html.DisplayNameFor(model => model.characterId)</th>
         <th>@Html.DisplayNameFor(model => model.bodyId)</th>
@@ -19,8 +22,8 @@
     @foreach (var listKart in Model)
     {
         <tr>
-            <th>@Html.DisplayFor(modelKart => listKart.id)</th>
             <th>@Html.DisplayFor(modelKart => listKart.name)</th>
+            <th>@Html.DisplayFor(modelKart => listKart.id)</th>
             <th>@Html.DisplayFor(modelKart => listKart.userId)</th>
             <th>@Html.DisplayFor(modelKart => listKart.characterId)</th>
             <th>@Html.DisplayFor(modelKart => listKart.bodyId)</th>

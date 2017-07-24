@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "create a kart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model MarioKart7Builder.Models.Kart
+
+<h2>Create</h2>
+<hr />
+<h4>Add a new kart</h4>
+@using (Html.BeginForm())
+{
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.name)
+        @Html.TextBoxFor(model => model.name)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Cost)
+        @Html.TextBoxFor(model => model.Cost)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Image)
+        @Html.TextBoxFor(model => model.Image)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Country)
+        @Html.TextBoxFor(model => model.Country)
+    </div>
+
+    <input type="submit" value="Add new Gummi" />
+}
+<p>@Html.ActionLink("Back to list", "Index")</p>

@@ -21,5 +21,18 @@ namespace MarioKart7Builder.Controllers
             var thisKart = db.Karts.FirstOrDefault(Karts => Karts.id == id);
             return View(thisKart);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Kart newkart)
+        {
+            db.Karts.Add(newkart);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
