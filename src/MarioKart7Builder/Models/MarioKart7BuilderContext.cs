@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MarioKart7Builder.Models
 {
-    public class MarioKart7BuilderContext : DbContext
+    public class MarioKart7BuilderContext : IdentityDbContext<User>
     {
         public virtual DbSet<Kart> Karts { get; set; }
         public virtual DbSet<Body> Bodys { get; set; }
@@ -17,6 +18,20 @@ namespace MarioKart7Builder.Models
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=KartBuilder;integrated security=True");
+        }
+
+        public MarioKart7BuilderContext(DbContextOptions options) : base(options)
+        {
+
+        }
+
+        public MarioKart7BuilderContext()
+        {
+        }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
         }
     }
 }

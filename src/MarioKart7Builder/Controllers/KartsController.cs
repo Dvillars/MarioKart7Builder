@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MarioKart7Builder.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace MarioKart7Builder.Controllers
 {
@@ -18,7 +19,7 @@ namespace MarioKart7Builder.Controllers
 
         public IActionResult Details(int id)
         {
-            var thisKart = db.Karts.FirstOrDefault(Karts => Karts.id == id);
+            var thisKart = db.Karts.FirstOrDefault(karts => karts.id == id);
             return View(thisKart);
         }
 
@@ -31,6 +32,35 @@ namespace MarioKart7Builder.Controllers
         public IActionResult Create(Kart newkart)
         {
             db.Karts.Add(newkart);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Edit(int id)
+        {
+            var thisKart = db.Karts.FirstOrDefault(karts => karts.id == id);
+            return View(thisKart);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Kart kart)
+        {
+            db.Entry(kart).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var thisKart = db.Karts.FirstOrDefault(karts => karts.id == id);
+            return View(thisKart);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var thisKart = db.Karts.FirstOrDefault(karts => karts.id == id);
+            db.Karts.Remove(thisKart);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

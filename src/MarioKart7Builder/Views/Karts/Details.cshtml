@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "To Do List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model MarioKart7Builder.Models.Kart
+
+<h2>Details</h2>
+<hr>
+@Html.ActionLink("Edit", "Edit", new { id = Model.id }) | @Html.ActionLink("Delete", "Delete", new { id = Model.id })
+
+<h3>@Html.DisplayNameFor(model => model.name): @Html.DisplayFor(model => model.name)</h3>
+<ul>
+    <li>@Html.DisplayNameFor(model => model.userId): @Html.DisplayFor(model => model.userId)</li>
+    <li>@Html.DisplayNameFor(model => model.characterId): @Html.DisplayFor(model => model.characterId)</li>
+    <li>@Html.DisplayNameFor(model => model.bodyId): @Html.DisplayFor(model => model.bodyId)</li>
+    <li>@Html.DisplayNameFor(model => model.tireId): @Html.DisplayFor(model => model.tireId)</li>
+    <li>@Html.DisplayNameFor(model => model.gliderId): @Html.DisplayFor(model => model.gliderId)</li>
+
+</ul>
+
+<p>@Html.ActionLink("Back to list", "Index")</p>

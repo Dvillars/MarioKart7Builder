@@ -11,7 +11,7 @@
 
 <table>
     <tr>
-        <th>@Html.DisplayNameFor(model => model.name)</th>
+        <th>@Html.DisplayNameFor(model => model.name) (click name to see details)</th>
         <th>@Html.DisplayNameFor(model => model.id)</th>
         <th>@Html.DisplayNameFor(model => model.userId)</th>
         <th>@Html.DisplayNameFor(model => model.characterId)</th>
@@ -19,16 +19,16 @@
         <th>@Html.DisplayNameFor(model => model.tireId)</th>
         <th>@Html.DisplayNameFor(model => model.gliderId)</th>
     </tr>
-    @foreach (var listKart in Model)
+    @foreach (var kart in Model)
     {
         <tr>
-            <th>@Html.DisplayFor(modelKart => listKart.name)</th>
-            <th>@Html.DisplayFor(modelKart => listKart.id)</th>
-            <th>@Html.DisplayFor(modelKart => listKart.userId)</th>
-            <th>@Html.DisplayFor(modelKart => listKart.characterId)</th>
-            <th>@Html.DisplayFor(modelKart => listKart.bodyId)</th>
-            <th>@Html.DisplayFor(modelKart => listKart.tireId)</th>
-            <th>@Html.DisplayFor(modelKart => listKart.gliderId)</th>
+            <th>@Html.ActionLink((string)@kart.name, "Details", new { id = kart.id })</th>
+            <th>@Html.DisplayFor(modelKart => kart.id)</th>
+            <th>@Html.DisplayFor(modelKart => kart.userId)</th>
+            <th>@Html.DisplayFor(modelKart => kart.characterId)</th>
+            <th>@Html.DisplayFor(modelKart => kart.bodyId)</th>
+            <th>@Html.DisplayFor(modelKart => kart.tireId)</th>
+            <th>@Html.DisplayFor(modelKart => kart.gliderId)</th>
         </tr>
     }
 </table>

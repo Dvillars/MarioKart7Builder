@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using MarioKart7Builder.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace MarioKart7Builder
 {
@@ -27,10 +28,12 @@ namespace MarioKart7Builder
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-
             services.AddEntityFramework()
                 .AddDbContext<MarioKart7BuilderContext>(options =>
                     options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<MarioKart7BuilderContext>()
+                .AddDefaultTokenProviders();
         }
         public void Configure(IApplicationBuilder app)
         {
@@ -45,7 +48,7 @@ namespace MarioKart7Builder
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World! help");
+                await context.Response.WriteAsync("Hello World!");
             });
         }
     }

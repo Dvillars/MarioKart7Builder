@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "To Do List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model MarioKart7Builder.Models.Kart
+
+<h2>Are you sure you want to delete this?</h2>
+<hr />
+@Html.DisplayNameFor(model => model.name): @Html.DisplayFor(model => model.name)
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete" />
+}
+<p>@Html.ActionLink("Back to View", "Details", new { id = Model.id })</p>

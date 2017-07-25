@@ -1,15 +1,16 @@
 ﻿@{
-    ViewData["Title"] = "create a kart";
+    ViewData["Title"] = "Edit your kart";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model MarioKart7Builder.Models.Kart
 
-<h2>Create</h2>
+<h2>Edit</h2>
 <hr />
-<h4>Add a new kart</h4>
+<h4>Edit this Kart: @Html.DisplayFor(model => model.name)</h4>
+
 @using (Html.BeginForm())
 {
-
+    @Html.HiddenFor(model => model.id)
     <div class="form-group">
         @Html.LabelFor(model => model.name)
         @Html.TextBoxFor(model => model.name)
@@ -39,7 +40,6 @@
         @Html.LabelFor(model => model.gliderId)
         @Html.TextBoxFor(model => model.gliderId)
     </div>
-
-    <input type="submit" value="Add new Kart" />
+    <input type="submit" value="Save" />
 }
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Back to View", "Details", new { id = Model.id })</p>
