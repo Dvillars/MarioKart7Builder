@@ -5,12 +5,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MarioKart7Builder.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace MarioKart7Builder.Controllers
 {
     public class KartsController : Controller
     {
         private MarioKart7BuilderContext db = new MarioKart7BuilderContext();
+        private readonly UserManager<ApplicationUser> _userManager;
 
         public IActionResult Index()
         {

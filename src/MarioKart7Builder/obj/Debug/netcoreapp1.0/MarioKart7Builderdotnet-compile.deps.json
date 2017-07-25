@@ -28,7 +28,8 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "1.0.1",
           "Microsoft.AspNetCore.StaticFiles": "1.0.0",
           "Microsoft.AspNetCore.Mvc.Core": "1.0.1",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",
+          "Microsoft.AspNetCore.Identity": "1.0.0"
         },
         "compile": {
           "MarioKart7Builder.dll": {}
@@ -2753,7 +2754,8 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "1.0.1",
           "Microsoft.AspNetCore.StaticFiles": "1.0.0",
           "Microsoft.AspNetCore.Mvc.Core": "1.0.1",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",
+          "Microsoft.AspNetCore.Identity": "1.0.0"
         },
         "runtime": {
           "MarioKart7Builder.dll": {}

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MarioKart7Builder.Models
 {
-    public class MarioKart7BuilderContext : IdentityDbContext<User>
+    public class MarioKart7BuilderContext : IdentityDbContext<ApplicationUser>
     {
         public virtual DbSet<Kart> Karts { get; set; }
         public virtual DbSet<Body> Bodys { get; set; }

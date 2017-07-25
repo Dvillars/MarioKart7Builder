@@ -13,7 +13,7 @@ namespace MarioKart7Builder.Models
         [Key]
         public int id { get; set; }
         public string name { get; set; }
-        public int userId { get; set; }
+        public string userId { get; set; }
         public int characterId { get; set; }
         public int bodyId { get; set; }
         public int tireId { get; set; }

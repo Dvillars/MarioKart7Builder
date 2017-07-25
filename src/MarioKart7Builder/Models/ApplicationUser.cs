@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MarioKart7Builder.Models
 {
-    public class User : IdentityUser
+    public class ApplicationUser : IdentityUser
     {
         
     }

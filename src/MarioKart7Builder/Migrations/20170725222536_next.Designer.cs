@@ -8,9 +8,10 @@ using MarioKart7Builder.Models;
 namespace MarioKart7Builder.Migrations
 {
     [DbContext(typeof(MarioKart7BuilderContext))]
-    partial class MarioKart7BuilderContextModelSnapshot : ModelSnapshot
+    [Migration("20170725222536_next")]
+    partial class next
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")

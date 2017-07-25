@@ -31,7 +31,7 @@ namespace MarioKart7Builder
             services.AddEntityFramework()
                 .AddDbContext<MarioKart7BuilderContext>(options =>
                     options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
-            services.AddIdentity<User, IdentityRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<MarioKart7BuilderContext>()
                 .AddDefaultTokenProviders();
         }
