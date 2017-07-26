@@ -4,10 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Authorization;
 using MarioKart7Builder.Models;
+using MarioKart7Builder;
 using MarioKart7Builder.ViewModels;
-using System.Diagnostics;
 
 
 namespace MarioKart7Builder.Controllers
@@ -54,18 +53,14 @@ namespace MarioKart7Builder.Controllers
         {
             return View();
         }
-
+        //Login
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
-            var user = model.Email;
-            Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(user, model.Password, isPersistent: true, lockoutOnFailure: false);
-
-            var stuff = result;
-            
+            Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: true, lockoutOnFailure: false);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Karts");
             }
             else
             {
@@ -73,11 +68,12 @@ namespace MarioKart7Builder.Controllers
             }
         }
 
+
         [HttpPost]
         public async Task<IActionResult> LogOff()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

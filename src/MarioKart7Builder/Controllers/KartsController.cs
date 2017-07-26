@@ -16,7 +16,9 @@ namespace MarioKart7Builder.Controllers
 
         public IActionResult Index()
         {
-            return View(db.Karts.ToList());
+            var nowuser = !!!;
+            var allKarts = db.Karts.Where(karts => karts.userId == nowuser).ToList();
+            return View(allKarts);
         }
 
         public IActionResult Details(int id)
