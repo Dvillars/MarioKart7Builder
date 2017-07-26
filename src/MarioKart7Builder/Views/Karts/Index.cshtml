@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "yeeeee";
+    ViewData["Title"] = "list kart";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -12,23 +12,19 @@
 <table>
     <tr>
         <th>@Html.DisplayNameFor(model => model.name) (click name to see details)</th>
-        <th>@Html.DisplayNameFor(model => model.id)</th>
-        <th>@Html.DisplayNameFor(model => model.userId)</th>
-        <th>@Html.DisplayNameFor(model => model.characterId)</th>
-        <th>@Html.DisplayNameFor(model => model.bodyId)</th>
-        <th>@Html.DisplayNameFor(model => model.tireId)</th>
-        <th>@Html.DisplayNameFor(model => model.gliderId)</th>
+        <th>@Html.DisplayNameFor(model => model.character)</th>
+        <th>@Html.DisplayNameFor(model => model.body)</th>
+        <th>@Html.DisplayNameFor(model => model.tire)</th>
+        <th>@Html.DisplayNameFor(model => model.glider)</th>
     </tr>
     @foreach (var kart in Model)
     {
         <tr>
             <th>@Html.ActionLink((string)@kart.name, "Details", new { id = kart.id })</th>
-            <th>@Html.DisplayFor(modelKart => kart.id)</th>
-            <th>@Html.DisplayFor(modelKart => kart.userId)</th>
-            <th>@Html.DisplayFor(modelKart => kart.characterId)</th>
-            <th>@Html.DisplayFor(modelKart => kart.bodyId)</th>
-            <th>@Html.DisplayFor(modelKart => kart.tireId)</th>
-            <th>@Html.DisplayFor(modelKart => kart.gliderId)</th>
+            <th>@Html.DisplayFor(modelKart => kart.character.name)</th>
+            <th>@kart</th>
+            <th>@Html.DisplayFor(modelKart => kart)</th>
+            <th>@Html.DisplayFor(modelKart => kart.glider)</th>
         </tr>
     }
 </table>

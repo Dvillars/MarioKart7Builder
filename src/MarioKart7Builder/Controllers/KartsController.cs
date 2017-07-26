@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using MarioKart7Builder.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace MarioKart7Builder.Controllers
 {
@@ -16,9 +17,9 @@ namespace MarioKart7Builder.Controllers
 
         public IActionResult Index()
         {
-            var nowuser = !!!;
-            var allKarts = db.Karts.Where(karts => karts.userId == nowuser).ToList();
-            return View(allKarts);
+            var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var kartsthing = db.Karts.Where(karts => karts.userId == userId).ToList();
+            return View(kartsthing);
         }
 
         public IActionResult Details(int id)
@@ -36,6 +37,11 @@ namespace MarioKart7Builder.Controllers
         public IActionResult Create(Kart newkart)
         {
             db.Karts.Add(newkart);
+            newkart.userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            newkart.character = db.Characters.FirstOrDefault(karts => karts.id == 3);
+            newkart.body = db.Bodys.FirstOrDefault(karts => karts.id == 3);
+            newkart.tire = db.Tires.FirstOrDefault(karts => karts.id == 3);
+            newkart.glider = db.Gliders.FirstOrDefault(karts => karts.id == 3);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -50,6 +56,7 @@ namespace MarioKart7Builder.Controllers
         public IActionResult Edit(Kart kart)
         {
             db.Entry(kart).State = EntityState.Modified;
+            kart.userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

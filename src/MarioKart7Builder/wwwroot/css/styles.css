@@ -1,2 +1,4 @@
-﻿body {
+﻿td, th {
+    border: solid lightblue 2px;
+    padding: 5px;
 }

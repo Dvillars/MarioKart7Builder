@@ -14,9 +14,9 @@ namespace MarioKart7Builder.Models
         public int id { get; set; }
         public string name { get; set; }
         public string userId { get; set; }
-        public int characterId { get; set; }
-        public int bodyId { get; set; }
-        public int tireId { get; set; }
-        public int gliderId { get; set; }
+        public virtual Character character { get; set; }
+        public virtual Body body { get; set; }
+        public virtual Tire tire { get; set; }
+        public virtual Glider glider { get; set; }
     }
 }
