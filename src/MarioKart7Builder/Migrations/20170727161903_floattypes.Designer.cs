@@ -8,9 +8,10 @@ using MarioKart7Builder.Models;
 namespace MarioKart7Builder.Migrations
 {
     [DbContext(typeof(MarioKart7BuilderContext))]
-    partial class MarioKart7BuilderContextModelSnapshot : ModelSnapshot
+    [Migration("20170727161903_floattypes")]
+    partial class floattypes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
@@ -349,19 +350,19 @@ namespace MarioKart7Builder.Migrations
             modelBuilder.Entity("MarioKart7Builder.Models.Kart", b =>
                 {
                     b.HasOne("MarioKart7Builder.Models.Body", "body")
-                        .WithMany("Karts")
+                        .WithMany()
                         .HasForeignKey("bodyid");
 
                     b.HasOne("MarioKart7Builder.Models.Character", "character")
-                        .WithMany("Karts")
+                        .WithMany()
                         .HasForeignKey("characterid");
 
                     b.HasOne("MarioKart7Builder.Models.Glider", "glider")
-                        .WithMany("Karts")
+                        .WithMany()
                         .HasForeignKey("gliderid");
 
                     b.HasOne("MarioKart7Builder.Models.Tire", "tire")
-                        .WithMany("Karts")
+                        .WithMany()
                         .HasForeignKey("tireid");
                 });
 

@@ -10,20 +10,25 @@ namespace MarioKart7Builder.Models
     [Table("bodys")]
     public class Body
     {
+        public Body()
+        {
+            this.Karts = new HashSet<Kart>();
+        }
         [Key]
         public int id { get; set; }
         public string name { get; set; }
-        public int landSpeed { get; set; }
-        public int waterSpeed { get; set; }
-        public int airSpeed { get; set; }
-        public int acceleration { get; set; }
-        public int weight { get; set; }
-        public int landHandling { get; set; }
-        public int watrHandling { get; set; }
-        public int airHandling { get; set; }
-        public int offRoad { get; set; }
-        public int miniTurbo { get; set; }
-        public int stabiliy { get; set; }
-        public int drift { get; set; }
+        public float landSpeed { get; set; }
+        public float waterSpeed { get; set; }
+        public float airSpeed { get; set; }
+        public float acceleration { get; set; }
+        public float weight { get; set; }
+        public float landHandling { get; set; }
+        public float watrHandling { get; set; }
+        public float airHandling { get; set; }
+        public float offRoad { get; set; }
+        public float miniTurbo { get; set; }
+        public float stabiliy { get; set; }
+        public float drift { get; set; }
+        public virtual ICollection<Kart> Karts { get; set; }
     }
 }

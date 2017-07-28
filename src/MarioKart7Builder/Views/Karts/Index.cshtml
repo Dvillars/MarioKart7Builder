@@ -22,9 +22,9 @@
         <tr>
             <th>@Html.ActionLink((string)@kart.name, "Details", new { id = kart.id })</th>
             <th>@Html.DisplayFor(modelKart => kart.character.name)</th>
-            <th>@kart</th>
-            <th>@Html.DisplayFor(modelKart => kart)</th>
-            <th>@Html.DisplayFor(modelKart => kart.glider)</th>
+            <th>@Html.DisplayFor(modelKart => kart.body.name)</th>
+            <th>@Html.DisplayFor(modelKart => kart.tire.name)</th>
+            <th>@Html.DisplayFor(modelKart => kart.glider.name)</th>
         </tr>
     }
 </table>

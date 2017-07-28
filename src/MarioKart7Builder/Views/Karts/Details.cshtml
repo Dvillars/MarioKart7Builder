@@ -4,18 +4,87 @@
 }
 @model MarioKart7Builder.Models.Kart
 
-<h2>Details</h2>
+<h2>your kart Details</h2>
 <hr>
 @Html.ActionLink("Edit", "Edit", new { id = Model.id }) | @Html.ActionLink("Delete", "Delete", new { id = Model.id })
 
-<h3>@Html.DisplayNameFor(model => model.name): @Html.DisplayFor(model => model.name)</h3>
-<ul>
-    <li>@Html.DisplayNameFor(model => model.userId): @Html.DisplayFor(model => model.userId)</li>
-    <li>@Html.DisplayNameFor(model => model.character: @Html.DisplayFor(model => model.character</li>
-    <li>@Html.DisplayNameFor(model => model.body: @Html.DisplayFor(model => model.body</li>
-    <li>@Html.DisplayNameFor(model => model.tire: @Html.DisplayFor(model => model.tire</li>
-    <li>@Html.DisplayNameFor(model => model.glider: @Html.DisplayFor(model => model.glider</li>
 
-</ul>
+<table>
+    <tr>
+        <th>@Html.DisplayFor(model => model.name)</th>
+        <th>@Html.DisplayNameFor(model => model.character.landSpeed)</th>
+        <th>@Html.DisplayNameFor(model => model.character.waterSpeed)</th>
+        <th>@Html.DisplayNameFor(model => model.character.airSpeed)</th>
+        <th>@Html.DisplayNameFor(model => model.character.acceleration)</th>
+        <th>@Html.DisplayNameFor(model => model.character.weight)</th>
+        <th>@Html.DisplayNameFor(model => model.character.landHandling)</th>
+        <th>@Html.DisplayNameFor(model => model.character.watrHandling)</th>
+        <th>@Html.DisplayNameFor(model => model.character.airHandling)</th>
+        <th>@Html.DisplayNameFor(model => model.character.stabiliy)</th>
+        <th>@Html.DisplayNameFor(model => model.character.drift)</th>
+        <th>@Html.DisplayNameFor(model => model.character.miniTurbo)</th>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.character)</th>
+        <th>@Html.DisplayFor(model => model.character.landSpeed)</th>
+        <th>@Html.DisplayFor(model => model.character.waterSpeed)</th>
+        <th>@Html.DisplayFor(model => model.character.airSpeed)</th>
+        <th>@Html.DisplayFor(model => model.character.acceleration)</th>
+        <th>@Html.DisplayFor(model => model.character.weight)</th>
+        <th>@Html.DisplayFor(model => model.character.landHandling)</th>
+        <th>@Html.DisplayFor(model => model.character.watrHandling)</th>
+        <th>@Html.DisplayFor(model => model.character.airHandling)</th>
+        <th>@Html.DisplayFor(model => model.character.stabiliy)</th>
+        <th>@Html.DisplayFor(model => model.character.drift)</th>
+        <th>@Html.DisplayFor(model => model.character.miniTurbo)</th>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.body)</th>
+        <th>@Html.DisplayFor(model => model.body.landSpeed)</th>
+        <th>@Html.DisplayFor(model => model.body.waterSpeed)</th>
+        <th>@Html.DisplayFor(model => model.body.airSpeed)</th>
+        <th>@Html.DisplayFor(model => model.body.acceleration)</th>
+        <th>@Html.DisplayFor(model => model.body.weight)</th>
+        <th>@Html.DisplayFor(model => model.body.landHandling)</th>
+        <th>@Html.DisplayFor(model => model.body.watrHandling)</th>
+        <th>@Html.DisplayFor(model => model.body.airHandling)</th>
+        <th>@Html.DisplayFor(model => model.body.stabiliy)</th>
+        <th>@Html.DisplayFor(model => model.body.drift)</th>
+        <th>@Html.DisplayFor(model => model.body.miniTurbo)</th>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.tire)</th>
+        <th>@Html.DisplayFor(model => model.tire.landSpeed)</th>
+        <th>@Html.DisplayFor(model => model.tire.waterSpeed)</th>
+        <th>@Html.DisplayFor(model => model.tire.airSpeed)</th>
+        <th>@Html.DisplayFor(model => model.tire.acceleration)</th>
+        <th>@Html.DisplayFor(model => model.tire.weight)</th>
+        <th>@Html.DisplayFor(model => model.tire.landHandling)</th>
+        <th>@Html.DisplayFor(model => model.tire.watrHandling)</th>
+        <th>@Html.DisplayFor(model => model.tire.airHandling)</th>
+        <th>@Html.DisplayFor(model => model.tire.stabiliy)</th>
+        <th>@Html.DisplayFor(model => model.tire.drift)</th>
+        <th>@Html.DisplayFor(model => model.tire.miniTurbo)</th>
+    </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.glider)</th>
+        <th>@Html.DisplayFor(model => model.glider.landSpeed)</th>
+        <th>@Html.DisplayFor(model => model.glider.waterSpeed)</th>
+        <th>@Html.DisplayFor(model => model.glider.airSpeed)</th>
+        <th>@Html.DisplayFor(model => model.glider.acceleration)</th>
+        <th>@Html.DisplayFor(model => model.glider.weight)</th>
+        <th>@Html.DisplayFor(model => model.glider.landHandling)</th>
+        <th>@Html.DisplayFor(model => model.glider.watrHandling)</th>
+        <th>@Html.DisplayFor(model => model.glider.airHandling)</th>
+        <th>@Html.DisplayFor(model => model.glider.stabiliy)</th>
+        <th>@Html.DisplayFor(model => model.glider.drift)</th>
+        <th>@Html.DisplayFor(model => model.glider.miniTurbo)</th>
+    </tr>
+    <tr>
+        <th>Total</th>
+        <th>@Model.glider.miniTurbo + 5</th>
+    </tr>
+</table>
+
 
 <p>@Html.ActionLink("Back to list", "Index")</p>
