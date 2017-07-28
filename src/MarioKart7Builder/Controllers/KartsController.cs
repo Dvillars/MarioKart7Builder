@@ -35,13 +35,13 @@ namespace MarioKart7Builder.Controllers
             CreateKartViewModel vm = new CreateKartViewModel();
 
             List<Character> AllCharacters = db.Characters.ToList();
-            IEnumerable<SelectListItem> CharacterSelectList = 
+            IEnumerable<SelectListItem> CharacterSelectList =
                 from c in AllCharacters
                 select new SelectListItem
-                    {
-                        Value = c.id.ToString(),
-                        Text = c.name
-                    };
+                {
+                    Value = c.id.ToString(),
+                    Text = c.name
+                };
             vm.Characters = CharacterSelectList;
 
             List<Body> AllBodys = db.Bodys.ToList();
@@ -64,21 +64,21 @@ namespace MarioKart7Builder.Controllers
                 };
             vm.Tires = TireSelectList;
 
-            List<Character> AllCharacters = db.Characters.ToList();
-            IEnumerable<SelectListItem> CharacterSelectList =
-                from c in AllCharacters
+            List<Glider> AllGliders = db.Gliders.ToList();
+            IEnumerable<SelectListItem> GliderSelectList =
+                from c in AllGliders
                 select new SelectListItem
                 {
                     Value = c.id.ToString(),
                     Text = c.name
                 };
-            vm.Characters = CharacterSelectList;
+            vm.Gliders = GliderSelectList;
             vm.kart = new Kart();
 
-            //ViewBag.CharactersId = new SelectList(db.Characters, "CharactersId", "Name");
-            //ViewBag.BodysId = new SelectList(db.Bodys, "BodysId", "Name");
-            //ViewBag.TiresId = new SelectList(db.Tires, "TiresId", "Name");
-            //ViewBag.GlidersId = new SelectList(db.Gliders, "GlidersId", "Name");
+            //ViewBag.Characters = new SelectList(db.Characters, "id", "name");
+            //ViewBag.Bodys = new SelectList(db.Bodys, "id", "name");
+            //ViewBag.Tires = new SelectList(db.Tires, "id", "name");
+            //ViewBag.Gliders = new SelectList(db.Gliders, "id", "name");
             return View(vm);
         }
 
@@ -109,8 +109,49 @@ namespace MarioKart7Builder.Controllers
 
         public IActionResult Edit(int id)
         {
-            var thisKart = db.Karts.FirstOrDefault(karts => karts.id == id);
-            return View(thisKart);
+            CreateKartViewModel vm = new CreateKartViewModel();
+
+            List<Character> AllCharacters = db.Characters.ToList();
+            IEnumerable<SelectListItem> CharacterSelectList =
+                from c in AllCharacters
+                select new SelectListItem
+                {
+                    Value = c.id.ToString(),
+                    Text = c.name
+                };
+            vm.Characters = CharacterSelectList;
+
+            List<Body> AllBodys = db.Bodys.ToList();
+            IEnumerable<SelectListItem> BodySelectList =
+                from c in AllBodys
+                select new SelectListItem
+                {
+                    Value = c.id.ToString(),
+                    Text = c.name
+                };
+            vm.Bodys = BodySelectList;
+
+            List<Tire> AllTires = db.Tires.ToList();
+            IEnumerable<SelectListItem> TireSelectList =
+                from c in AllTires
+                select new SelectListItem
+                {
+                    Value = c.id.ToString(),
+                    Text = c.name
+                };
+            vm.Tires = TireSelectList;
+
+            List<Glider> AllGliders = db.Gliders.ToList();
+            IEnumerable<SelectListItem> GliderSelectList =
+                from c in AllGliders
+                select new SelectListItem
+                {
+                    Value = c.id.ToString(),
+                    Text = c.name
+                };
+            vm.Gliders = GliderSelectList;
+            vm.kart = db.Karts.FirstOrDefault(karts => karts.id == id);
+            return View(vm);
         }
 
         [HttpPost]

@@ -25,7 +25,7 @@
         <th>@Html.DisplayNameFor(model => model.character.miniTurbo)</th>
     </tr>
     <tr>
-        <th>@Html.DisplayNameFor(model => model.character)</th>
+        <th>@Html.DisplayFor(model => model.character.name)</th>
         <th>@Html.DisplayFor(model => model.character.landSpeed)</th>
         <th>@Html.DisplayFor(model => model.character.waterSpeed)</th>
         <th>@Html.DisplayFor(model => model.character.airSpeed)</th>
@@ -39,7 +39,7 @@
         <th>@Html.DisplayFor(model => model.character.miniTurbo)</th>
     </tr>
     <tr>
-        <th>@Html.DisplayNameFor(model => model.body)</th>
+        <th>@Html.DisplayFor(model => model.body.name)</th>
         <th>@Html.DisplayFor(model => model.body.landSpeed)</th>
         <th>@Html.DisplayFor(model => model.body.waterSpeed)</th>
         <th>@Html.DisplayFor(model => model.body.airSpeed)</th>
@@ -53,7 +53,7 @@
         <th>@Html.DisplayFor(model => model.body.miniTurbo)</th>
     </tr>
     <tr>
-        <th>@Html.DisplayNameFor(model => model.tire)</th>
+        <th>@Html.DisplayFor(model => model.tire.name)</th>
         <th>@Html.DisplayFor(model => model.tire.landSpeed)</th>
         <th>@Html.DisplayFor(model => model.tire.waterSpeed)</th>
         <th>@Html.DisplayFor(model => model.tire.airSpeed)</th>
@@ -67,7 +67,7 @@
         <th>@Html.DisplayFor(model => model.tire.miniTurbo)</th>
     </tr>
     <tr>
-        <th>@Html.DisplayNameFor(model => model.glider)</th>
+        <th>@Html.DisplayFor(model => model.glider.name)</th>
         <th>@Html.DisplayFor(model => model.glider.landSpeed)</th>
         <th>@Html.DisplayFor(model => model.glider.waterSpeed)</th>
         <th>@Html.DisplayFor(model => model.glider.airSpeed)</th>
@@ -82,7 +82,6 @@
     </tr>
     <tr>
         <th>Total</th>
-        <th>@Model.glider.miniTurbo + 5</th>
     </tr>
 </table>
 

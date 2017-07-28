@@ -2,39 +2,41 @@
     ViewData["Title"] = "Edit your kart";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@model MarioKart7Builder.Models.Kart
+@using MarioKart7Builder.ViewModels
+@model CreateKartViewModel
 
 <h2>Edit</h2>
 <hr />
-<h4>Edit this Kart: @Html.DisplayFor(model => model.name)</h4>
+<h4>Edit this Kart: @Html.DisplayFor(model => model.kart.name)</h4>
 
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(model => model.id)
+    @Html.HiddenFor(model => model.kart.id)
     <div class="form-group">
-        @Html.LabelFor(model => model.name)
-        @Html.TextBoxFor(model => model.name)
+        @Html.LabelFor(model => model.kart.name)
+        @Html.TextBoxFor(model => model.kart.name)
     </div>
-    @Html.HiddenFor(model => model.userId)
+    @Html.HiddenFor(model => model.kart.userId)
+
     <div class="form-group">
-        @Html.LabelFor(model => model.character)
-        @Html.TextBoxFor(model => model.character)
+        @Html.LabelFor(model => model.kart.characterId)
+        @Html.DropDownListFor(model => model.kart.characterId, Model.Characters, "Characters", null)
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.body)
-        @Html.TextBoxFor(model => model.body)
+        @Html.LabelFor(model => model.kart.bodyId)
+        @Html.DropDownListFor(model => model.kart.bodyId, Model.Bodys, "Bodys", null)
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.tire)
-        @Html.TextBoxFor(model => model.tire)
+        @Html.LabelFor(model => model.kart.tireId)
+        @Html.DropDownListFor(model => model.kart.tireId, Model.Tires, "Tires", null)
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.glider)
-        @Html.TextBoxFor(model => model.glider)
+        @Html.LabelFor(model => model.kart.gliderId)
+        @Html.DropDownListFor(model => model.kart.gliderId, Model.Gliders, "Gliders", null)
     </div>
     <input type="submit" value="Save" />
 }
-<p>@Html.ActionLink("Back to View", "Details", new { id = Model.id })</p>
+<p>@Html.ActionLink("Back to View", "Details", new { id = Model.kart.id })</p>

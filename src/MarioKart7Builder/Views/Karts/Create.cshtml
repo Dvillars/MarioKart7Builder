@@ -18,23 +18,23 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.kart.characterId)
-        @Html.DropDownListFor(model => model.kart.character.id , Model.Characters, "default", null)
-    </div>
-
-    @*<div class="form-group">
-        @Html.LabelFor(model => model.body)
-        @Html.DropDownList("BodysId")
+        @Html.DropDownListFor(model => model.kart.characterId, Model.Characters, "Characters", null)
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.tire)
-        @Html.DropDownList("TiresId")
+        @Html.LabelFor(model => model.kart.bodyId)
+        @Html.DropDownListFor(model => model.kart.bodyId, Model.Bodys, "Bodys", null)
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.glider)
-        @Html.DropDownList("GlidersId")
-    </div>*@
+       @Html.LabelFor(model => model.kart.tireId)
+       @Html.DropDownListFor(model => model.kart.tireId, Model.Tires, "Tires", null)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.kart.gliderId)
+        @Html.DropDownListFor(model => model.kart.gliderId, Model.Gliders, "Gliders", null)
+    </div>
 
     <input type="submit" value="Add new Kart" />
 }

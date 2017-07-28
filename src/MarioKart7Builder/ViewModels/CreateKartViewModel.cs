@@ -14,5 +14,8 @@ namespace MarioKart7Builder.ViewModels
     {
         public Kart kart { get; set; }
         public IEnumerable<SelectListItem> Characters { get; set; }
+        public IEnumerable<SelectListItem> Bodys { get;set; }
+        public IEnumerable<SelectListItem> Tires { get;set; }
+        public IEnumerable<SelectListItem> Gliders { get; set; }
     }
 }
