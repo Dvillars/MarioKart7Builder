@@ -27,6 +27,18 @@ namespace MarioKart7Builder.Controllers
         public IActionResult Details(int id)
         {
             var thisKart = db.Karts.Include(karts => karts.character).Include(karts => karts.body).Include(karts => karts.glider).Include(karts => karts.tire).FirstOrDefault(karts => karts.id == id);
+            ViewBag.landSpeed = thisKart.character.landSpeed + thisKart.glider.landSpeed + thisKart.body.landSpeed + thisKart.tire.landSpeed;
+            ViewBag.waterSpeed = thisKart.character.waterSpeed + thisKart.glider.waterSpeed + thisKart.body.waterSpeed + thisKart.tire.waterSpeed;
+            ViewBag.airSpeed = thisKart.character.airSpeed + thisKart.glider.airSpeed + thisKart.body.airSpeed + thisKart.tire.airSpeed;
+            ViewBag.acceleration = thisKart.character.acceleration + thisKart.glider.acceleration + thisKart.body.acceleration + thisKart.tire.acceleration;
+            ViewBag.weight = thisKart.character.weight + thisKart.glider.weight + thisKart.body.weight + thisKart.tire.weight;
+            ViewBag.landHandling = thisKart.character.landHandling + thisKart.glider.landHandling + thisKart.body.landHandling + thisKart.tire.landHandling;
+            ViewBag.watrHandling = thisKart.character.watrHandling + thisKart.glider.watrHandling + thisKart.body.watrHandling + thisKart.tire.watrHandling;
+            ViewBag.airHandling = thisKart.character.airHandling + thisKart.glider.airHandling + thisKart.body.airHandling + thisKart.tire.airHandling;
+            ViewBag.stabiliy = thisKart.character.stabiliy + thisKart.glider.stabiliy + thisKart.body.stabiliy + thisKart.tire.stabiliy;
+            ViewBag.drift = thisKart.character.drift + thisKart.glider.drift + thisKart.body.drift + thisKart.tire.drift;
+            ViewBag.miniTurbo = thisKart.character.miniTurbo + thisKart.glider.miniTurbo + thisKart.body.miniTurbo + thisKart.tire.miniTurbo;
+            ViewBag.offRoad = thisKart.character.offRoad + thisKart.glider.offRoad + thisKart.body.offRoad + thisKart.tire.offRoad;
             return View(thisKart);
         }
 
@@ -75,10 +87,6 @@ namespace MarioKart7Builder.Controllers
             vm.Gliders = GliderSelectList;
             vm.kart = new Kart();
 
-            //ViewBag.Characters = new SelectList(db.Characters, "id", "name");
-            //ViewBag.Bodys = new SelectList(db.Bodys, "id", "name");
-            //ViewBag.Tires = new SelectList(db.Tires, "id", "name");
-            //ViewBag.Gliders = new SelectList(db.Gliders, "id", "name");
             return View(vm);
         }
 
@@ -91,21 +99,6 @@ namespace MarioKart7Builder.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        //[HttpPost]
-        //public IActionResult Create(string newName, int newCharacterId, int newbodyId, int newTireId, int newGliderId)
-        //{
-        //    Kart newkart = new Kart();
-        //    newkart.name = newName;
-        //    newkart.userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        //    newkart.character = db.Characters.FirstOrDefault(karts => karts.id == newCharacterId);
-        //    newkart.body = db.Bodys.FirstOrDefault(karts => karts.id == newbodyId);
-        //    newkart.tire = db.Tires.FirstOrDefault(karts => karts.id == newTireId);
-        //    newkart.glider = db.Gliders.FirstOrDefault(karts => karts.id == newGliderId);
-        //    db.Karts.Add(newkart);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-
-        //}
 
         public IActionResult Edit(int id)
         {

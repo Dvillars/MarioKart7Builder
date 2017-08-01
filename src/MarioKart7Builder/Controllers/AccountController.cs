@@ -64,7 +64,7 @@ namespace MarioKart7Builder.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return View();
             }
         }
 
