@@ -2,3 +2,6 @@
     border: solid lightblue 2px;
     padding: 5px;
 }
+body {
+    background-color: lightgrey;
+}
