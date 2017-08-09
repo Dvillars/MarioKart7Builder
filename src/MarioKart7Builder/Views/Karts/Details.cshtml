@@ -6,7 +6,7 @@
 
 <h2>your kart Details</h2>
 <hr>
-@Html.ActionLink("Edit", "Edit", new { id = Model.id }) | @Html.ActionLink("Delete", "Delete", new { id = Model.id })
+@Html.ActionLink("Edit This Kart", "Edit", new { id = Model.id }) | @Html.ActionLink("Delete This Kart", "Delete", new { id = Model.id })
 
 
 <table>
@@ -87,7 +87,7 @@
         <th>@Html.DisplayFor(model => model.glider.miniTurbo)</th>
 
     </tr>
-    <tr>
+    <tfoot><tr>
         <th>Total</th>
         <th>@ViewBag.landSpeed</th>
         <th>@ViewBag.waterSpeed</th>
@@ -101,7 +101,7 @@
         <th>@ViewBag.stabiliy</th>
         <th>@ViewBag.drift</th>
         <th>@ViewBag.miniTurbo</th>
-    </tr>
+    </tr></tfoot>
 </table>
 
 

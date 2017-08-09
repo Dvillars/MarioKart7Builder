@@ -1,7 +1,41 @@
-﻿td, th {
-    border: solid lightblue 2px;
+﻿th {
+    border: solid cornflowerblue 1px;
     padding: 5px;
 }
+
+table {
+    border: solid cornflowerblue 5px;
+    border-radius: 3px;
+}
+
 body {
     background-color: lightgrey;
+}
+
+hr {
+    border: none;
+    height: 3px;
+    background-color: cornflowerblue;
+}
+
+.btn {
+    border: solid cornflowerblue 3px;
+    color: cornflowerblue;
+}
+.btn:hover {
+    border: solid tomato 3px;
+    color: tomato;
+    background-color: white;
+}
+
+a {
+    color: cornflowerblue;
+}
+a:hover {
+    color: tomato;
+    text-decoration: none;
+}
+
+tfoot {
+    border-top: 3px solid cornflowerblue;
 }

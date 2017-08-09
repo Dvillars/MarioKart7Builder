@@ -9,16 +9,22 @@
 
 <h2>Register a new user</h2>
 <hr />
-@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-inline" }))
 {
-    @Html.LabelFor(m => m.Email)
-    @Html.TextBoxFor(m => m.Email)
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+    </div>
 
-    @Html.LabelFor(m => m.Password)
-    @Html.PasswordFor(m => m.Password)
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+    </div>
 
-    @Html.LabelFor(m => m.ConfirmPassword)
-    @Html.PasswordFor(m => m.ConfirmPassword)
+    <div class="form-group">
+        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
+        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+    </div>
 
-    <input type="submit" value="Register" />
+    <input class="btn btn-default" type="submit" value="Register" />
 }
