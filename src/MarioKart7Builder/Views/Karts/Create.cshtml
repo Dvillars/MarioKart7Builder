@@ -11,30 +11,30 @@
 {
 
     <div class="form-group">
-        @Html.LabelFor(model => model.kart.name)
-        @Html.TextBoxFor(model => model.kart.name)
+        @Html.LabelFor(model => model.kart.name, new { @class = "control-label" })
+        @Html.TextBoxFor(model => model.kart.name, new { @class = "form-control" })
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.kart.characterId)
-        @Html.DropDownListFor(model => model.kart.characterId, Model.Characters, "Characters", null)
+        @Html.LabelFor(model => model.kart.characterId, new { @class = "control-label" })
+        @Html.DropDownListFor(model => model.kart.characterId, Model.Characters, "Must Choose Character", new { @class = "btn btn-default dropdown-toggle" })
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.kart.bodyId)
-        @Html.DropDownListFor(model => model.kart.bodyId, Model.Bodys, "Bodys", null)
+        @Html.LabelFor(model => model.kart.bodyId, new { @class = "control-label" })
+        @Html.DropDownListFor(model => model.kart.bodyId, Model.Bodys, "Must Choose Body", new { @class = "btn btn-default dropdown-toggle" })
     </div>
 
     <div class="form-group">
-       @Html.LabelFor(model => model.kart.tireId)
-       @Html.DropDownListFor(model => model.kart.tireId, Model.Tires, "Tires", null)
+       @Html.LabelFor(model => model.kart.tireId, new { @class = "control-label" })
+       @Html.DropDownListFor(model => model.kart.tireId, Model.Tires, "Must Choose Tire", new { @class = "btn btn-default dropdown-toggle" })
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.kart.gliderId)
-        @Html.DropDownListFor(model => model.kart.gliderId, Model.Gliders, "Gliders", null)
+        @Html.LabelFor(model => model.kart.gliderId, new { @class = "control-label" })
+        @Html.DropDownListFor(model => model.kart.gliderId, Model.Gliders, "Must Choose Glider", new { @class = "btn btn-default dropdown-toggle" })
     </div>
 
-    <input type="submit" value="Add new Kart" />
+    <input class="btn btn-default" type="submit" value="Add new Kart" />
 }
 <p>@Html.ActionLink("Back to list", "Index")</p>

@@ -18,14 +18,15 @@ hr {
     background-color: cornflowerblue;
 }
 
-.btn {
+.btn, input.form-control {
     border: solid cornflowerblue 3px;
     color: cornflowerblue;
-}
-.btn:hover {
-    border: solid tomato 3px;
-    color: tomato;
     background-color: white;
+}
+.btn:focus, .btn:hover, option, input.form-control:focus {
+    border: solid white 3px;
+    color: white;
+    background-color: cornflowerblue;
 }
 
 a {
