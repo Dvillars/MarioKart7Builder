@@ -7,9 +7,12 @@
 
 @model LoginViewModel
 
-<h2>Log in with your account</h2>
+<h2>LogIn With Your Account</h2>
+<p>
+    @Html.ActionLink("Home", "index", "Home")
+</p>
 <hr />
-@using (Html.BeginForm(new { @class = "form-inline" }))
+@using (Html.BeginForm(new { @class = "form-group" }))
 {
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "control-label" })

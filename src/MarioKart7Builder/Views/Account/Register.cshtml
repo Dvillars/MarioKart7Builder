@@ -7,9 +7,12 @@
 
 @model RegisterViewModel
 
-<h2>Register a new user</h2>
+<h2>Register As A New User</h2>
+<p>
+    @Html.ActionLink("Home", "index", "Home")
+</p>
 <hr />
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-inline" }))
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-group" }))
 {
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "control-label" })

@@ -4,11 +4,15 @@
 }
 @model MarioKart7Builder.Models.Kart
 
-<h2>Are you sure you want to delete this?</h2>
+<h2>Are You Sure You Want To <strong>DELETE</strong> This Kart?</h2>
+<p>
+    @Html.ActionLink("Back to View", "Details", new { id = Model.id })
+</p>
 <hr />
-@Html.DisplayNameFor(model => model.name): @Html.DisplayFor(model => model.name)
+<h4 class="over">
+    @Html.DisplayFor(model => model.name)
+</h4>
 @using (Html.BeginForm())
 {
-    <input type="submit" value="Delete" />
+    <input class="btn btn-default" type="submit" value="Delete" />
 }
-<p>@Html.ActionLink("Back to View", "Details", new { id = Model.id })</p>

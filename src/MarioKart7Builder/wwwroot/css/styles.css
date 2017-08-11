@@ -40,3 +40,7 @@ a:hover {
 tfoot {
     border-top: 3px solid cornflowerblue;
 }
+
+h4.over {
+    margin-left: 10px;
+}

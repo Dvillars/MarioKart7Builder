@@ -5,8 +5,10 @@
 @model MarioKart7Builder.Models.Kart
 
 <h2>your kart Details</h2>
-<hr>
-@Html.ActionLink("Edit This Kart", "Edit", new { id = Model.id }) | @Html.ActionLink("Delete This Kart", "Delete", new { id = Model.id })
+<p>
+    @Html.ActionLink("Back to List", "Index") | @Html.ActionLink("Edit This Kart", "Edit", new { id = Model.id }) | @Html.ActionLink("Delete This Kart", "Delete", new { id = Model.id })
+</p>
+<hr />
 
 
 <table>
@@ -104,5 +106,3 @@
     </tr></tfoot>
 </table>
 
-
-<p>@Html.ActionLink("Back to list", "Index")</p>

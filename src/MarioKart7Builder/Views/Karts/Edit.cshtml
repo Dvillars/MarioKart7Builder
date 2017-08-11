@@ -5,38 +5,38 @@
 @using MarioKart7Builder.ViewModels
 @model CreateKartViewModel
 
-<h2>Edit</h2>
+<h2>Editing Your Kart</h2>
+<p>
+    @Html.ActionLink("Back to View", "Details", new { id = Model.kart.id })
+</p>
 <hr />
-<h4>Edit this Kart: @Html.DisplayFor(model => model.kart.name)</h4>
-
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.kart.id)
     <div class="form-group">
-        @Html.LabelFor(model => model.kart.name)
-        @Html.TextBoxFor(model => model.kart.name)
+        @Html.LabelFor(model => model.kart.name, new { @class = "control-label" })
+        @Html.TextBoxFor(model => model.kart.name, new { @class = "form-control" })
     </div>
     @Html.HiddenFor(model => model.kart.userId)
 
     <div class="form-group">
-        @Html.LabelFor(model => model.kart.characterId)
-        @Html.DropDownListFor(model => model.kart.characterId, Model.Characters, "Characters", null)
+        @Html.LabelFor(model => model.kart.characterId, new { @class = "control-label" })
+        @Html.DropDownListFor(model => model.kart.characterId, Model.Characters, "Characters", new { @class = "btn btn-default dropdown-toggle" })
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.kart.bodyId)
-        @Html.DropDownListFor(model => model.kart.bodyId, Model.Bodys, "Bodys", null)
+        @Html.LabelFor(model => model.kart.bodyId, new { @class = "control-label" })
+        @Html.DropDownListFor(model => model.kart.bodyId, Model.Bodys, "Bodys", new { @class = "btn btn-default dropdown-toggle" })
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.kart.tireId)
-        @Html.DropDownListFor(model => model.kart.tireId, Model.Tires, "Tires", null)
+        @Html.LabelFor(model => model.kart.tireId, new { @class = "control-label" })
+        @Html.DropDownListFor(model => model.kart.tireId, Model.Tires, "Tires", new { @class = "btn btn-default dropdown-toggle" })
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.kart.gliderId)
-        @Html.DropDownListFor(model => model.kart.gliderId, Model.Gliders, "Gliders", null)
+        @Html.LabelFor(model => model.kart.gliderId, new { @class = "control-label" })
+        @Html.DropDownListFor(model => model.kart.gliderId, Model.Gliders, "Gliders", new { @class = "btn btn-default dropdown-toggle" })
     </div>
-    <input type="submit" value="Save" />
+    <input class="btn btn-default" type="submit" value="Save" />
 }
-<p>@Html.ActionLink("Back to View", "Details", new { id = Model.kart.id })</p>

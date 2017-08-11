@@ -6,6 +6,9 @@
 @model CreateKartViewModel
 
 <h2>Add a new kart</h2>
+<p>
+    @Html.ActionLink("Back to list", "Index")
+</p>
 <hr />
 @using (Html.BeginForm())
 {
@@ -37,4 +40,3 @@
 
     <input class="btn btn-default" type="submit" value="Add new Kart" />
 }
-<p>@Html.ActionLink("Back to list", "Index")</p>

@@ -6,11 +6,11 @@
 @using System.Security.Claims
 
 <h2>Authentication with Identity</h2>
-<hr />
 @if (User.Identity.IsAuthenticated)
 {
-    <p>Hello @User.Identity.Name!</p>
-    @Html.ActionLink("your kart list", "index", "karts")
+    @Html.ActionLink("Your Kart List", "index", "karts")
+    <hr />
+    <h4 class="over">Hello @User.Identity.Name!</h4>
     @using (Html.BeginForm("LogOff", "Account"))
     {
         <input type="submit" class="btn btn-default" value="Log out" />
@@ -18,6 +18,8 @@
 }
 else
 {
-    <p>@Html.ActionLink("Register", "Register")</p>
-    <p>@Html.ActionLink("Log in", "Login")</p>
+    <p>
+        @Html.ActionLink("Register", "Register") | @Html.ActionLink("Log in", "Login")
+    </p>
+    <hr />
 }
